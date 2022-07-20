@@ -7,4 +7,5 @@ CREATE TABLE IF NOT EXISTS `scripts`(
 
 );
 INSERT INTO SCRIPTS (NAME, SCRIPT) VALUES ('hello_world' , 'return "Hello World."');
-INSERT INTO SCRIPTS (NAME, SCRIPT) VALUES ('addition' , 'return p1 + p2');
+INSERT INTO SCRIPTS (NAME, SCRIPT) VALUES ('addition' , 'return $x + $y');
+INSERT INTO SCRIPTS (NAME, SCRIPT) VALUES ('add_array' , 'int sum=0; $arr.each{ e -> sum+=e }; return sum');

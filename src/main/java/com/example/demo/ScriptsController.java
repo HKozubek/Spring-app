@@ -1,10 +1,12 @@
 package com.example.demo;
 
+
 import groovy.lang.Binding;
+
 import org.springframework.web.bind.annotation.*;
 import groovy.lang.GroovyShell;
 
-import java.util.List;
+import java.util.*;
 
 @RestController
 public class ScriptsController {
@@ -29,7 +31,7 @@ public class ScriptsController {
     }
 
     @PostMapping("scripts/run/{name}")
-    Object runScript(@PathVariable String name, @RequestBody List<Object> params){
+    Object runScript(@PathVariable String name, @RequestBody(required = false) ScriptParameters parameters){
 
         List<Scripts> list = repository.findByName(name);
         if(list.isEmpty()) {
@@ -37,14 +39,17 @@ public class ScriptsController {
         }
         else {
             Binding binding = new Binding();
-            int i=1;
-            for (Object par: params) {
-                binding.setVariable("p" + String.valueOf(i), par);
-                i+=1;
-            }
             GroovyShell shell = new GroovyShell(binding);
+            if(parameters == null)
+            {
+                return shell.evaluate(list.get(0).getScript());
+            }
+
+            parameters.getParameters().forEach( (key, value) -> binding.setVariable( '$' + key, value));
             return shell.evaluate(list.get(0).getScript());
+
         }
+
     }
 
     @GetMapping("/scripts/{id}")
@@ -72,6 +77,8 @@ public class ScriptsController {
     void deleteScript(@PathVariable Integer id) {
         repository.deleteById(id);
     }
+
+
 
 
 }
