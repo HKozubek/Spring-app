@@ -60,7 +60,6 @@ public class ScriptsController {
             {
                 return shell.evaluate(list.get(0).getScript());
             }
-            System.out.println(parameters.getParameters());
             parameters.getParameters().forEach( (key, value) -> binding.setVariable( '$' + key, value));
             return shell.evaluate(list.get(0).getScript());
 
