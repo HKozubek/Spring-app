@@ -8,14 +8,9 @@ import java.util.Objects;
 @Entity(name = "Scripts")
 public class Scripts {
     @Id
-//    @SequenceGenerator(
-//            name = "scripts_sequence",
-//            sequenceName ="scripts_sequence",
-//            allocationSize = 1)
     @GeneratedValue
             (
             strategy = GenerationType.IDENTITY
-//            generator = "scripts_sequence"
     )
     @Column(
             name = "ID",
