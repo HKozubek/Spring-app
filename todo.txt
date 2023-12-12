@@ -1,0 +1,59 @@
+"todo-tree.highlights.enabled": true,
+  "todo-tree.general.statusBar": "total",
+  "todo-tree.general.tagGroups": {},
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]",
+    "TESTME",
+    "DEBUG"
+  ],
+  "todo-tree.highlights.customHighlight": {
+    "TODO": {
+      "foreground": "#000",
+      "background": "#ffc43f",
+      "overviewRulerColor": "#ffc43f",
+      "rulerColour": "#ffc43f",
+      "iconColour": "#ffc43f",
+      "gutterIcon": true
+    },
+    "FIXME": {
+      "foreground": "#000",
+      "background": "#4CAF50",
+      "overviewRulerColor": "#4CAF50",
+      "rulerColour": "#4CAF50",
+      "iconColour": "#4CAF50",
+      "gutterIcon": true,
+      "icon": "tools"
+    },
+    "BUG": {
+      "foreground": "#fff",
+      "background": "#b91c1c",
+      "overviewRulerColor": "#b91c1c",
+      "rulerColour": "#b91c1c",
+      "iconColour": "#b91c1c",
+      "gutterIcon": true
+    },
+    "TESTME": {
+      "foreground": "#FFF",
+      "background": "#005fa1",
+      "overviewRulerColor": "#005fa1",
+      "rulerColour": "#005fa1",
+      "iconColour": "#005fa1",
+      "gutterIcon": true,
+      "icon": "beaker"
+    },
+    "DEBUG": {
+      "foreground": "#FFF",
+      "background": "#7518B6",
+      "overviewRulerColor": "#7518B6",
+      "rulerColour": "#7518B6",
+      "iconColour": "#7518B6",
+      "gutterIcon": true,
+      "icon": "terminal"
+    }
+  },
